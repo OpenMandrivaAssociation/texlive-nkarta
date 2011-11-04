@@ -1,3 +1,9 @@
+# revision 16437
+# category Package
+# catalog-ctan /fonts/nkarta
+# catalog-date 2009-12-20 19:35:44 +0100
+# catalog-license pd
+# catalog-version 0.2
 Name:		texlive-nkarta
 Version:	0.2
 Release:	1
@@ -52,6 +58,7 @@ as Encapsulated PostScript, using MetaPost, is also provided.
 #- source
 %doc %{_texmfdistdir}/source/latex/nkarta/nkarta.dtx
 %doc %{_texmfdistdir}/source/latex/nkarta/nkarta.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -62,3 +69,5 @@ as Encapsulated PostScript, using MetaPost, is also provided.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts metapost doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
