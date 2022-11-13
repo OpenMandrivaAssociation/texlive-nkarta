@@ -1,19 +1,13 @@
-# revision 16437
-# category Package
-# catalog-ctan /fonts/nkarta
-# catalog-date 2009-12-20 19:35:44 +0100
-# catalog-license pd
-# catalog-version 0.2
 Name:		texlive-nkarta
-Version:	0.2
-Release:	11
+Version:	16437
+Release:	1
 Summary:	A "new" version of the karta cartographic fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/nkarta
 License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/nkarta.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/nkarta.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/nkarta.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/nkarta.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/nkarta.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/nkarta.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ stability in MetaFont. A version that will produce the glyphs
 as Encapsulated PostScript, using MetaPost, is also provided.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -51,24 +45,11 @@ as Encapsulated PostScript, using MetaPost, is also provided.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts metapost doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.2-2
-+ Revision: 754348
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.2-1
-+ Revision: 719122
-- texlive-nkarta
-- texlive-nkarta
-- texlive-nkarta
-- texlive-nkarta
-
