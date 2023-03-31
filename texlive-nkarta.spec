@@ -1,6 +1,6 @@
 Name:		texlive-nkarta
 Version:	16437
-Release:	1
+Release:	2
 Summary:	A "new" version of the karta cartographic fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/nkarta
