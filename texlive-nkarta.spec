@@ -3,7 +3,7 @@ Version:	16437
 Release:	2
 Summary:	A "new" version of the karta cartographic fonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/nkarta
+URL:		https://www.ctan.org/tex-archive/fonts/nkarta
 License:	PD
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/nkarta.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/nkarta.doc.r%{version}.tar.xz
